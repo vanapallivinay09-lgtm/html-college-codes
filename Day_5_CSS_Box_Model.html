@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .box {
+    background-color: lightyellow;
+    width: 200px;
+    height: 100px;
+    
+    /* Box Model */
+    padding: 20px;       /* inside space */
+    border: 5px solid blue; /* box edge */
+    margin: 30px;        /* outside space */
+    
+    text-align: center;
+  }
+
+  .image-box {
+    width: 300px;
+    height: 200px;
+    border: 3px solid black;
+    margin: 20px;
+
+    /* Background Image */
+    background-image: url('https://picsum.photos/300/200');
+    background-size: cover; /* cover / contain */
+    background-repeat: no-repeat;
+  }
+</style>
+</head>
+<body>
+<h1>CSS Box Model - Day 5</h1>
+
+<div class="box">
+  My Box<br>
+  width: 200px<br>
+  height: 100px
+</div>
+
+<div class="image-box">
+</div>
+
+<p><b>Remember:</b> Total width = width + padding + border + margin</p>
+</body>
+</html>
