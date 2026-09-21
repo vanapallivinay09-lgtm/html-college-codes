@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  a { 
+    text-decoration: none; /* removes underline */
+    color: blue; 
+    margin: 10px;
+  }
+  .btn-link {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+<h1>HTML Links - Day 8</h1>
+
+<!-- 1. External Link -->
+<h3>External Link</h3>
+<a href="https://www.google.com">Go to Google</a>
+<br>
+<a href="https://www.google.com" target="_blank">Open Google in New Tab</a>
+
+<!-- 2. Internal Link (to another file) -->
+<h3>Internal Link</h3>
+<a href="Day7_Void_Elements_Lists.html">Go to Day 7 File</a>
+
+<!-- 3. Anchor Link (inside same page) -->
+<h3>Same Page Link</h3>
+<a href="#bottom">Go to Bottom</a>
+
+<!-- 4. Button as Link (like you learnt Card + Button) -->
+<h3>Button Link</h3>
+<a href="https://github.com" class="btn-link">My GitHub</a>
+
+<!-- 5. Image as Link -->
+<h3>Image Link</h3>
+<a href="https://picsum.photos">
+  <img src="https://picsum.photos/200/100" alt="clickable image">
+</a>
+
+<p id="bottom">I am bottom — you came here via link!</p>
+
+<p><b>Interview:</b> href = where to go, target="_blank" = new tab</p>
+
+</body>
+</html>
