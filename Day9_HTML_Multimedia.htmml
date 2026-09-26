@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+  .card { background: white; padding: 20px; margin: 20px 0; border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<h1>HTML5 Multimedia - Day 9</h1>
+
+<div class="card">
+  <h3>1. HTML5 Video</h3>
+  <!-- controls = play/pause, autoplay, loop, muted -->
+  <video width="300" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support video tag
+  </video>
+  <p>Attributes: controls, autoplay, loop, muted, width/height</p>
+</div>
+
+<div class="card">
+  <h3>2. HTML5 Audio</h3>
+  <audio controls>
+    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+    Your browser does not support audio
+  </audio>
+  <p>Same attributes as video</p>
+</div>
+
+<div class="card">
+  <h3>3. YouTube Embed (most used)</h3>
+  <iframe width="300" height="170" 
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    frameborder="0" allowfullscreen>
+  </iframe>
+</div>
+
+<div class="card">
+  <h3>HTML5 New Features Recap</h3>
+  <ul>
+    <li><b>Semantic:</b> header, footer, section, article, nav</li>
+    <li><b>Multimedia:</b> audio, video (no Flash needed)</li>
+    <li><b>Graphics:</b> canvas, svg</li>
+    <li><b>Form:</b> email, date, range inputs</li>
+  </ul>
+</div>
+
+</body>
+</html>
