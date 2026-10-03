@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; background: #f0f0f0; padding: 20px; }
+ .card { background: white; padding: 20px; border-radius: 12px; margin: 20px auto; width: 350px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  h1 { text-align: center; color: blue; }
+ .badge { background: green; color: white; padding: 5px 10px; border-radius: 20px; font-size: 12px; }
+  button { background: blue; color: white; padding: 10px 20px; border: none; border-radius: 8px; width: 100%; margin-top: 10px; }
+  code { background: #eee; padding: 2px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<h1>Gen AI Debugging & Building</h1>
+<p style="text-align:center"><span class="badge">Day 10 - Completed</span></p>
+
+<div class="card">
+  <h3>How I Debug With AI</h3>
+  <p>Before: <code>ERR_FILE_NOT_FOUND</code> for 1 hour</p>
+  <p>Now: Ask AI → Fixed in 2 mins</p>
+  <button>View My 10-Day Streak</button>
+</div>
+
+<div class="card">
+  <h3>My Prompt Template</h3>
+  <p><code>My code:<br>[paste]<br>Error:<br>[paste]<br>Fix with explanation</code></p>
+</div>
+
+<div class="card">
+  <h3>Links</h3>
+  <a href="Day9_HTML5_Multimedia.html">Day 9 - HTML5</a><br><br>
+  <a href="Day8_HTML_Links.html">Day 8 - Links</a>
+</div>
+
+</body>
+</html>
