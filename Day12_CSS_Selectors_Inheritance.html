@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* 1. TYPE SELECTOR - selects by tag name */
+  p {
+    color: gray;
+  }
+  h2 {
+    color: blue;
+  }
+
+  /* 2. CLASS SELECTOR - . (dot) - can use many times - MOST USED */
+  .card {
+    background: white;
+    border: 2px solid black;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+  .highlight {
+    background: yellow;
+    color: red;
+  }
+  .btn {
+    background: blue;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+
+  /* 3. ID SELECTOR - # (hash) - use only ONE time per page */
+  #main-title {
+    text-align: center;
+    background: linear-gradient(to right, blue, purple);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  #special {
+    border: 3px solid red;
+  }
+
+  /* 4. INHERITANCE - child gets style from parent */
+  .parent {
+    color: blue; /* this color will be inherited by children */
+    font-family: Arial;
+    border: 2px solid black;
+    padding: 15px;
+  }
+  /* p inside .parent will be blue automatically - inherited */
+  /* but border is NOT inherited - only text styles inherit */
+
+  .parent p {
+    /* This is descendant selector - more specific */
+    color: green;
+  }
+
+</style>
+</head>
+<body>
+
+<h1 id="main-title">CSS Selectors & Inheritance - Day 12</h1>
+
+<h2>1. Type Selector (p, h2)</h2>
+<p>This p is gray because p { color: gray }</p>
+<p>Another p - also gray</p>
+
+<h2>2. Class Selector (.card) - Use 100 times!</h2>
+<div class="card">I am card 1 - using .card</div>
+<div class="card">I am card 2 - same class</div>
+<div class="card highlight">I have TWO classes: card + highlight</div>
+
+<p>Button using class: <span class="btn">Click Me</span></p>
+
+<h2>3. ID Selector (#main-title) - Use only once!</h2>
+<div class="card" id="special">I have id="special" - red border because #special</div>
+<p><b>Rule:</b> id must be unique! Don't use same id twice</p>
+
+<h2>4. Inheritance - Most Fundamental!</h2>
+<div class="parent">
+  I am parent - color blue
+  <p>I am child p - I inherited blue? No, I am green because .parent p is more specific</p>
+  <span>I am span child - I inherited blue from parent!</span>
+  <div style="border: 1px solid gray; margin-top: 10px;">
+    Grandchild div - I inherited font-family Arial but NOT border
+  </div>
+</div>
+
+<h2>Priority Order (Interview!)</h2>
+<div class="card">
+  ID (#) > Class (.) > Type (p) <br>
+  Inline style > ID > Class > Type <br>
+  Example: #main-title will beat .card will beat p
+</div>
+
+</body>
+</html>
