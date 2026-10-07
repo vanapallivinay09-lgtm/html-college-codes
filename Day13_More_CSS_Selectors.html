@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+ .card { background: white; padding: 15px; margin: 15px 0; border-radius: 8px; border: 2px solid black; }
+
+  /* 1. PSEUDO-CLASSES - : (single colon) - state of element */
+ .btn {
+    background: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px;
+  }
+ .btn:hover { /* when mouse over */
+    background: red;
+    cursor: pointer;
+  }
+ .btn:active { /* when clicking */
+    background: green;
+  }
+  li:first-child { color: blue; font-weight: bold; } /* first li */
+  li:last-child { color: red; }
+  li:nth-child(2) { background: yellow; } /* 2nd child */
+
+  /* 2. PSEUDO-ELEMENTS - :: (double colon) - part of element */
+ .para::first-letter {
+    font-size: 40px; color: blue; font-weight: bold;
+  }
+ .para::first-line {
+    color: gray;
+  }
+ .para::before {
+    content: "👉 "; /* adds before */
+  }
+ .para::after {
+    content: " 🔥";
+  }
+
+  /* 3. COMBINATORS - relation between elements */
+  /* Space = descendant (inside) */
+ .parent p { color: green; } /* p inside parent anywhere */
+  /* > = direct child only */
+ .parent > p { border: 2px solid blue; } /* only direct p */
+  /* + = next sibling */
+  h3 + p { background: lightyellow; }
+  /* ~ = all siblings after */
+  h3 ~ p { font-style: italic; }
+
+  /* 4. ATTRIBUTE SELECTORS - [attribute] */
+  input[type="text"] { border: 2px solid blue; padding: 5px; }
+  input[type="password"] { border: 2px solid red; padding: 5px; }
+  a[href^="https"] { color: green; } /* starts with https */
+  a[target="_blank"] { background: yellow; }
+</style>
+</head>
+<body>
+
+<h1>More CSS Selectors - Day 13</h1>
+
+<div class="card">
+  <h3>1. Pseudo-classes (:) - state</h3>
+  <button class="btn">Hover Me - I turn Red!</button>
+  <ul>
+    <li>First Child - Blue</li>
+    <li>Second - Yellow bg (nth-child 2)</li>
+    <li>Last Child - Red</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>2. Pseudo-elements (::) - part</h3>
+  <p class="para">This is a paragraph. First letter is big blue, first line gray. I added emoji before and after using ::before and ::after. This is pro trick!</p>
+</div>
+
+<div class="card parent">
+  <h3>3. Combinators - relation</h3>
+  <p>Direct child p - green + blue border</p>
+  <div>
+    <p>Inside div inside parent - green but NO blue border (not direct)</p>
+  </div>
+  <p>Another direct child</p>
+</div>
+
+<div class="card">
+  <h3>4. Attribute Selectors - [type]</h3>
+  <input type="text" placeholder="Text - blue border">
+  <br><br>
+  <input type="password" placeholder="Password - red border">
+  <br><br>
+  <a href="https://google.com" target="_blank">https link - green + yellow bg</a><br>
+  <a href="page.html">Normal link - blue</a>
+</div>
+
+<p><b>Interview Trick:</b><br>
+  :hover = single colon (pseudo-class)<br>
+  ::before = double colon (pseudo-element)<br>
+ .parent p = space (descendant)<br>
+ .parent > p = > (direct child)</p>
+
+</body>
+</html>
