@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+ .card { background: white; padding: 15px; margin: 15px 0; border-radius: 8px; border: 2px solid black; }
+
+  /* 1. TYPE - lowest - 1 point */
+  p { color: black; }
+
+  /* 2. CLASS - medium - 10 points */
+ .text { color: blue; }
+
+  /* 3. ID - high - 100 points */
+  #myText { color: green; }
+
+  /* 4. Specificity battle - more specific wins */
+  /* p = 1, .text = 10, #myText = 100 */
+  p.text { color: orange; } /* 1+10=11 */
+  div p.text { color: purple; } /* 1+1+10=12 - wins over p.text */
+
+  /* 5. !important - 10000 points - The Important Exception */
+ .important-text {
+    color: red !important; /* wins over everything */
+  }
+
+  /* Even ID loses to !important */
+  #super-important {
+    color: green;
+  }
+
+  /* 6. Cascade - last rule wins if same specificity */
+ .same { color: blue; }
+ .same { color: red; } /* this wins because comes last */
+
+  /* 7. Inline Style - 1000 points - Style Attribute */
+  /* <p style="color: pink"> - this beats ID/Class/Type */
+</style>
+</head>
+<body>
+
+<h1>CSS Specificity and Cascade - Day 14</h1>
+
+<div class="card">
+  <h3>1. Cascade - Order matters</h3>
+  <p class="same">I am blue first, then red later - RED wins (last)</p>
+</div>
+
+<div class="card">
+  <h3>2. Specificity Points</h3>
+  <p>Type (p) = 1 point</p>
+  <p class="text">Class (.text) = 10 points - BLUE wins over black</p>
+  <p class="text" id="myText">ID (#myText) = 100 points - GREEN wins</p>
+  <p style="color: hotpink;" class="text" id="myText">Inline Style = 1000 points - PINK wins over ID!</p>
+</div>
+
+<div class="card">
+  <h3>3. Specificity Calculation</h3>
+  <p class="text">p.text = 1+10=11 - ORANGE</p>
+  <div><p class="text">div p.text = 1+1+10=12 - PURPLE wins (more specific)</p></div>
+</div>
+
+<div class="card">
+  <h3>4. Importance - !important = 10000 points</h3>
+  <p id="super-important" class="important-text">I have ID green but class has !important RED - RED wins!</p>
+  <p style="color: pink;" class="important-text">Even inline pink loses to !important RED!</p>
+  <p><b>Rule:</b> Never use !important unless emergency!</p>
+</div>
+
+<div class="card">
+  <h3>5. Final Order (Low to High)</h3>
+  <ol>
+    <li>Type (p, h1) - 1</li>
+    <li>Class (.card) - 10</li>
+    <li>Attribute [type="text"] - 10</li>
+    <li>Pseudo-class (:hover) - 10</li>
+    <li>ID (#logo) - 100</li>
+    <li>Inline style="..." - 1000</li>
+    <li>!important - 10000 - The Important Exception</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h3>6. Most Fundamental Concepts of CSS</h3>
+  <p><b>Cascade:</b> Last rule wins if same points</p>
+  <p><b>Specificity:</b> More points wins</p>
+  <p><b>Inheritance:</b> Child gets text styles from parent (you learnt yesterday)</p>
+  <p>These 3 = Most Fundamental Concepts!</p>
+</div>
+
+</body>
+</html>
+</html>
