@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+ .card { background: white; padding: 15px; margin: 20px 0; border-radius: 8px; border: 2px solid black; }
+
+  /* 1. SIZING ELEMENTS */
+  /* Extrinsic Size = you set size (width: 200px) */
+  .extrinsic {
+    width: 200px; /* you force size */
+    height: 100px;
+    background: lightblue;
+    border: 2px solid blue;
+  }
+  /* Intrinsic Size = content decides size */
+  .intrinsic {
+    background: lightyellow;
+    border: 2px solid orange;
+    /* no width/height - grows with content */
+    display: inline-block;
+  }
+
+  /* 2. HANDLING OVERFLOW */
+  .box-overflow {
+    width: 200px;
+    height: 80px;
+    border: 2px solid red;
+    background: white;
+    margin: 10px 0;
+  }
+  .overflow-visible { overflow: visible; } /* default - spills out */
+  .overflow-hidden { overflow: hidden; } /* hides extra */
+  .overflow-scroll { overflow: scroll; } /* scroll bars */
+  .overflow-auto { overflow: auto; } /* scroll only if needed - BEST! */
+
+  .overflow-x-demo {
+    width: 200px;
+    white-space: nowrap; /* no wrap */
+    overflow-x: scroll; /* horizontal scroll */
+    border: 2px solid black;
+  }
+
+  /* 3. MIN & MAX SIZES - Responsive! */
+  .min-max {
+    background: lightgreen;
+    min-width: 100px; /* not smaller than 100px */
+    max-width: 400px; /* not bigger than 400px */
+    min-height: 50px;
+    max-height: 120px;
+    border: 2px solid green;
+    padding: 10px;
+    overflow: auto; /* if content > max-height, scroll */
+  }
+
+  .responsive-card {
+    width: 80%; /* 80% of parent */
+    max-width: 500px; /* but max 500px - like YouTube */
+    min-width: 200px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+
+<h1>Sizing Elements & Handling Overflow - Day 15</h1>
+
+<div class="card">
+  <h3>1. Extrinsic vs Intrinsic Size</h3>
+  <p><b>Extrinsic:</b> You set size</p>
+  <div class="extrinsic">width:200px height:100px</div>
+  
+  <p><b>Intrinsic:</b> Content sets size</p>
+  <div class="intrinsic">Hi! I grow with text</div>
+  <div class="intrinsic">Longer text makes me longer automatically - intrinsic!</div>
+</div>
+
+<div class="card">
+  <h3>2. Handling Overflow</h3>
+  <p>When content bigger than box - what to do?</p>
+  
+  <b>overflow: visible (default)</b>
+  <div class="box-overflow overflow-visible">
+    This is very long text that is bigger than 80px height so it spills out of box - visible!
+  </div>
+  <br><br>
+  <b>overflow: hidden</b>
+  <div class="box-overflow overflow-hidden">
+    This long text is hidden - you can't see extra part - hidden!
+  </div>
+  
+  <b>overflow: scroll</b>
+  <div class="box-overflow overflow-scroll">
+    This has scroll bars always - even if not needed - scroll! This is very long text...
+  </div>
+  
+  <b>overflow: auto (BEST!)</b>
+  <div class="box-overflow overflow-auto">
+    Auto shows scroll ONLY when needed - auto! This is long...
+  </div>
+
+  <b>overflow-x: scroll (horizontal)</b>
+  <div class="overflow-x-demo">
+    This is a very long single line text that needs horizontal scroll - overflow-x!
+  </div>
+</div>
+
+<div class="card">
+  <h3>3. Min & Max Sizes - Responsive Design</h3>
+  
+  <div class="min-max">
+    min-width:100px max-width:400px min-height:50px max-height:120px<br><br>
+    I won't go smaller than 100px or bigger than 400px. If I have too much text, I scroll because max-height:120px + overflow:auto
+    <br>Extra text to make me overflow...
+  </div>
+
+  <div class="responsive-card">
+    <h4>Responsive Card</h4>
+    <p>width:80% max-width:500px - I am 80% on mobile, but max 500px on laptop. This is how YouTube, 【entity-Instagram¦canonical_name=Instagram】 cards work!</p>
+    <p>Try resizing browser - I adjust!</p>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Interview Notes</h3>
+  <ul>
+    <li><b>Extrinsic:</b> width/height you set</li>
+    <li><b>Intrinsic:</b> width auto based on content (like span)</li>
+    <li><b>overflow: hidden</b> = hide extra</li>
+    <li><b>overflow: auto</b> = scroll if needed (use this 90% time)</li>
+    <li><b>overflow-x / overflow-y</b> = horizontal / vertical separately</li>
+    <li><b>min-width / max-width</b> = responsive - most important for mobile!</li>
+  </ul>
+</div>
+
+</body>
+</html>
