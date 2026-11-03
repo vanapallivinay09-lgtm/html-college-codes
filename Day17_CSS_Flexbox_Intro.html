@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * { box-sizing: border-box; }
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+ .card { background: white; padding: 15px; margin: 20px 0; border-radius: 8px; border: 2px solid black; }
+
+  /* 1. Flex Container = parent with display:flex */
+  .flex-container {
+    display: flex; /* makes it flexbox */
+    border: 3px solid blue;
+    background: lightblue;
+    padding: 10px;
+    gap: 10px; /* space between items */
+  }
+
+  .flex-item {
+    background: white;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* 2. flex-direction */
+  .row { flex-direction: row; } /* default - left to right */
+  .row-reverse { flex-direction: row-reverse; }
+  .column { flex-direction: column; }
+  .column-reverse { flex-direction: column-reverse; }
+
+  /* 3. justify-content - Main Axis (horizontal if row) */
+  .justify-start { justify-content: flex-start; } /* left */
+  .justify-center { justify-content: center; } /* center - most used! */
+  .justify-end { justify-content: flex-end; } /* right */
+  .justify-between { justify-content: space-between; } /* space between */
+  .justify-around { justify-content: space-around; }
+
+  /* 4. align-items - Cross Axis (vertical if row) */
+  .align-container {
+    height: 150px;
+    display: flex;
+    border: 3px solid green;
+    background: lightgreen;
+  }
+  .align-start { align-items: flex-start; } /* top */
+  .align-center { align-items: center; } /* center - vertical center! */
+  .align-end { align-items: flex-end; } /* bottom */
+  .align-stretch { align-items: stretch; }
+
+  /* 5. Real: Perfect Center (both) */
+  .perfect-center {
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center; /* vertical center */
+    height: 150px;
+    background: linear-gradient(to right, blue, purple);
+    color: white;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Introduction to CSS Flexbox - Day 17</h1>
+
+<div class="card">
+  <h3>1. Flex Container (parent) + Flex Items (children)</h3>
+  <p>display:flex on parent makes children flex items</p>
+  <div class="flex-container row">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>2. flex-direction</h3>
+  <b>row (default):</b>
+  <div class="flex-container row"><div class="flex-item">1</div><div class="flex-item">2</div></div>
+  <b>column:</b>
+  <div class="flex-container column"><div class="flex-item">1</div><div class="flex-item">2</div></div>
+</div>
+
+<div class="card">
+  <h3>3. justify-content (Main Axis - horizontal)</h3>
+  <b>flex-start (left):</b>
+  <div class="flex-container justify-start"><div class="flex-item">1</div><div class="flex-item">2</div></div>
+  <b>center (most used!):</b>
+  <div class="flex-container justify-center"><div class="flex-item">1</div><div class="flex-item">2</div></div>
+  <b>space-between:</b>
+  <div class="flex-container justify-between"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+</div>
+
+<div class="card">
+  <h3>4. align-items (Cross Axis - vertical)</h3>
+  <b>center (vertical center):</b>
+  <div class="align-container align-center">
+    <div class="flex-item">Centered Vertically!</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>5. Perfect Center - justify + align = center (Interview!)</h3>
+  <div class="perfect-center">
+    <div>Perfectly Centered - Horizontal + Vertical!</div>
+  </div>
+  <code>display:flex; justify-content:center; align-items:center;</code>
+</div>
+
+<div class="card">
+  <h3>6. Real Use - Navbar & Card Row</h3>
+  <div class="flex-container justify-between" style="background: black; color: white;">
+    <div>Logo</div>
+    <div style="display:flex; gap:10px;"><span>Home</span><span>About</span><span>Contact</span></div>
+  </div>
+  <br>
+  <div class="flex-container justify-center">
+    <div class="flex-item">Card 1</div>
+    <div class="flex-item">Card 2</div>
+    <div class="flex-item">Card 3</div>
+  </div>
+</div>
+
+</body>
+</html>
