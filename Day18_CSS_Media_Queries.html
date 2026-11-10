@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * { box-sizing: border-box; }
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+
+  /* Default - Desktop / Laptop */
+  .container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+  }
+
+  .box-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .box {
+    background: blue;
+    color: white;
+    padding: 30px;
+    flex: 1;
+    border-radius: 8px;
+  }
+
+  h1 { color: blue; font-size: 36px; }
+
+  /* 1. MEDIA TYPES */
+  /* screen = laptop/mobile screen, print = printer, all = everything */
+
+  /* 2. MEDIA FEATURES - width, height, orientation */
+  /* Syntax: @media screen and (max-width: 600px) { ... } */
+
+  /* Tablet - max-width 768px */
+  @media screen and (max-width: 768px) {
+    h1 { font-size: 28px; color: green; }
+    .box { background: green; }
+    .container { background: lightyellow; }
+  }
+
+  /* Mobile - max-width 480px - MOST IMPORTANT! */
+  @media screen and (max-width: 480px) {
+    h1 { font-size: 22px; color: red; }
+    .box-row {
+      flex-direction: column; /* 3 boxes become 1 column */
+    }
+    .box { background: red; padding: 20px; }
+    .container { padding: 10px; }
+  }
+
+  /* Orientation - portrait vs landscape */
+  @media screen and (orientation: portrait) {
+    body { background: #e0f7fa; }
+  }
+  @media screen and (orientation: landscape) {
+    body { background: #fff3e0; }
+  }
+
+  /* Print - when user prints */
+  @media print {
+    body { background: white; }
+    .box { background: white; color: black; border: 1px solid black; }
+  }
+
+  /* 3. LOGICAL OPERATORS */
+  /* and = both must be true */
+  /* , = OR - any one */
+  /* not = opposite */
+
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    /* Only tablet 481-768 */
+    .box { border: 3px solid orange; }
+  }
+
+  /* , means OR - mobile OR tablet */
+  @media screen and (max-width: 480px), screen and (max-width: 768px) {
+    h1 { text-decoration: underline; }
+  }
+
+  /* not - NOT screen */
+  /* @media not screen { ... } */
+</style>
+</head>
+<body>
+
+<h1>CSS Media Queries - Day 18</h1>
+<p>Resize your browser window - watch colors change!</p>
+
+<div class="container">
+  <h2>Responsive Demo</h2>
+  <p>Desktop: Blue boxes in row</p>
+  <p>Tablet (768px): Green boxes</p>
+  <p>Mobile (480px): Red boxes stacked column</p>
+
+  <div class="box-row">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+  <h3>Interview Notes</h3>
+  <p><b>Syntax:</b> @media screen and (max-width: 600px) { ... }</p>
+  <p><b>Media Types:</b> screen, print, all</p>
+  <p><b>Media Features:</b> width, height, orientation (portrait/landscape)</p>
+  <p><b>Logical:</b> and = both, , (comma) = OR, not = opposite</p>
+  <p><b>Breakpoints:</b> Mobile 480px, Tablet 768px, Desktop 1024px</p>
+</div>
+
+</body>
+</html>
