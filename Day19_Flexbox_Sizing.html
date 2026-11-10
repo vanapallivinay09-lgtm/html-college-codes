@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    * { box-sizing: border-box; }
+  body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+ .card { background: white; padding: 15px; margin: 20px 0; border-radius: 8px; border: 2px solid black; }
+
+  .flex {
+    display: flex;
+    gap: 10px;
+    border: 3px solid blue;
+    background: lightblue;
+    padding: 10px;
+  }
+  .item {
+    background: white;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* 1. flex-grow - grow to fill extra space */
+  .grow-1 { flex-grow: 1; } /* takes 1 part */
+  .grow-2 { flex-grow: 2; } /* takes 2 parts = double! */
+  .grow-0 { flex-grow: 0; } /* no grow */
+
+  /* 2. flex-shrink - shrink when space less */
+  .shrink-1 { flex-shrink: 1; } /* can shrink */
+  .shrink-0 { flex-shrink: 0; } /* DON'T shrink - stays same */
+
+  /* 3. flex-basis - starting size before grow/shrink */
+  .basis-100 { flex-basis: 100px; }
+  .basis-200 { flex-basis: 200px; }
+
+  /* 4. Shorthand - flex: grow shrink basis */
+  .flex-1 { flex: 1; } /* flex-grow:1 shrink:1 basis:0 - most used! */
+  .flex-2 { flex: 2; }
+</style>
+</head>
+<body>
+
+<h1>Flexbox Sizing - Day 19</h1>
+
+<div class="card">
+  <h3>1. flex-grow - Fill extra space</h3>
+  <p>Container has extra space - who gets it?</p>
+  <div class="flex">
+    <div class="item grow-1">grow:1</div>
+    <div class="item grow-2">grow:2 (double!)</div>
+    <div class="item grow-1">grow:1</div>
+  </div>
+  <p>Total parts = 1+2+1 = 4. Middle gets 2/4 = 50%</p>
+</div>
+
+<div class="card">
+  <h3>2. flex-shrink - When space less</h3>
+  <div class="flex" style="width: 300px;">
+    <div class="item shrink-1" style="width: 150px;">shrink:1 - I will shrink</div>
+    <div class="item shrink-0" style="width: 150px;">shrink:0 - I WON'T shrink</div>
+    <div class="item shrink-1" style="width: 150px;">shrink:1 - I will shrink</div>
+  </div>
+  <p>Container 300px but items 450px → shrink:1 items shrink, shrink:0 stays 150px</p>
+</div>
+
+<div class="card">
+  <h3>3. flex-basis - Starting size</h3>
+  <div class="flex">
+    <div class="item basis-100">basis:100px</div>
+    <div class="item basis-200">basis:200px</div>
+    <div class="item">basis:auto (content)</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>4. Shorthand flex: grow shrink basis (Use this!)</h3>
+  <div class="flex">
+    <div class="item flex-1">flex:1</div>
+    <div class="item flex-2">flex:2 (double)</div>
+    <div class="item flex-1">flex:1</div>
+  </div>
+  <code>flex: 1 = flex-grow:1; flex-shrink:1; flex-basis:0;</code>
+</div>
+
+<div class="card">
+  <h3>5. Real Example - Navbar + 3 Cards</h3>
+  <div class="flex" style="justify-content: space-between; background: black;">
+    <div class="item" style="flex-grow:0;">Logo</div>
+    <div class="item" style="flex-grow:1; margin: 0 10px;">Search Bar - flex:1 grows!</div>
+    <div class="item" style="flex-grow:0;">Login</div>
+  </div>
+  <br>
+  <div class="flex">
+    <div class="item flex-1">Card 1</div>
+    <div class="item flex-1">Card 2</div>
+    <div class="item flex-1">Card 3 - All equal with flex:1</div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>Interview Notes</h3>
+  <ul>
+    <li><b>flex-grow:</b> How much to GROW when extra space (0 = no grow, 1 = grow)</li>
+    <li><b>flex-shrink:</b> How much to SHRINK when less space (0 = don't shrink)</li>
+    <li><b>flex-basis:</b> Starting size before grow/shrink</li>
+    <li><b>flex: 1</b> = shorthand - most used in real projects!</li>
+    <li>Yesterday: justify-content + align-items = position</li>
+    <li>Today: flex-grow/shrink/basis = size</li>
+  </ul>
+</div>
+
+</body>
+</html>
