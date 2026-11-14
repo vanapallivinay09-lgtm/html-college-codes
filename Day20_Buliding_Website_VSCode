@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website - Vinay</title>
+  <!-- STEP 2: Link CSS file - THIS is today's lesson! -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <h2 class="logo">Vinay's Website</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+  </div>
+
+  <div class="hero">
+    <h1>Hi, I'm Vinay 👋</h1>
+    <p>I am learning HTML, CSS & Python in college.</p>
+
+    <!-- STEP 1: Image from Cloudinary URL, not from laptop! -->
+    <!-- Paste your Cloudinary link here -->
+    <img src="https://res.cloudinary.com/demo/image/upload/v123/sample.jpg" alt="My Photo">
+    <p class="note">Replace above link with YOUR Cloudinary link</p>
+
+    <br>
+    <button>See My Projects</button>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://res.cloudinary.com/demo/image/upload/v123/html.jpg" alt="HTML">
+      <h3>HTML</h3>
+      <p>Day 1 to Day 20 - Headings to Flexbox</p>
+    </div>
+    <div class="card">
+      <img src="https://res.cloudinary.com/demo/image/upload/v123/css.jpg" alt="CSS">
+      <h3>CSS</h3>
+      <p>Colors, Box Model, Flexbox, Media Queries</p>
+    </div>
+    <div class="card">
+      <img src="https://res.cloudinary.com/demo/image/upload/v123/python.jpg" alt="Python">
+      <h3>Python</h3>
+      <p>Lists, Tuples, Sets, Functions</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Made by Vinay | python-college-codes + html-college-codes</p>
+  </div>
+
+</body>
+</html>
